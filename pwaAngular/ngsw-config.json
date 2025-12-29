@@ -26,5 +26,20 @@
         ]
       }
     }
-  ]
+  ],
+  "dataGroups": [
+  {
+    "name": "api",
+    "urls": [
+      "https://angular-pwa-production.up.railway.app/api/notes"
+    ],
+    "cacheConfig": {
+      "strategy": "performance",
+      "maxSize": 100,
+      "maxAge": "1d",
+      "timeout": "10s"
+    }
+  }
+]
+
 }
