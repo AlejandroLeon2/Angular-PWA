@@ -1,4 +1,4 @@
 export const environment = {
   production: false,
-  API: 'http://localhost:3000/api'
+  API: 'https://angular-pwa-production.up.railway.app/api'
 };
