@@ -1,0 +1,21 @@
+<section>
+  <h2>Mis Notas</h2>
+
+  @if (notes().length === 0) {
+    <p>No tienes notas aún.</p>
+  } @else {
+    <ul>
+      @for (note of notes(); track note.title) {
+        <li>
+          <strong>{{ note.title }}</strong>: {{ note.content }}
+          <button (click)="deleteNote($index)">Eliminar</button>
+        </li>
+      }
+    </ul>
+  }
+  <form [formGroup]="noteForm" (ngSubmit)="addNote()">
+    <input formControlName="title" placeholder="Título" />
+    <input formControlName="content" placeholder="Contenido" />
+    <button type="submit" [disabled]="noteForm.invalid">Agregar</button>
+  </form>
+</section>
